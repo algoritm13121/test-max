@@ -1,0 +1,77 @@
+@value blackBasic from '../../../../../css/colors.css';
+@value whiteDingy from '../../../../../css/colors.css';
+
+.root {
+    position: relative;
+    background-color: rgb(20,26,43);
+}
+
+.rootChart {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: calc(100vh - 84px - 66px);
+    width: 100%;
+    position: relative;
+    
+    @media(max-width: 1024px) {
+        height: calc(100vh - 187px);
+    }
+
+    @media(max-width: 544px) {
+        height: calc(100vh - 112px);
+    }
+
+    @media(max-height: 544px) {
+        height: calc(100vh - 112px);
+    }
+}
+
+.assetContainer {
+    position: absolute;
+    left: 24px;
+    top: 16px;
+    font-family: FuturaPT-Medium;
+    color: whiteDingy;
+    text-shadow: 0px 0px 4px rgba(255, 255, 255, 0.5);
+    z-index: 2;
+
+    .assetTitle {
+        font-size: 24px;
+        line-height: 31px;
+        letter-spacing: 0.01em;
+    }
+
+    .purchasePrice {
+        display: flex;
+        align-items: center;
+        margin-bottom: 6px;
+        margin-top: 14px;
+    }
+
+    .sellingPrice {
+        display: flex;
+        align-items: center;
+    }
+
+    .purchasePrice, .sellingPrice {
+        font-size: 16px;
+        line-height: 21px;
+
+        img {
+            margin-right: 7px;
+        }
+    }
+
+    @media(max-width: 544px) {
+        left: 16px;
+        top: 12px;
+    }
+
+    @media(max-height: 544px) {
+        left: 16px;
+        top: 12px;
+    }
+}
+

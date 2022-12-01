@@ -1,0 +1,639 @@
+@value whiteBasic from '../../../../../css/colors.css';
+@value lightBlueDingy from '../../../../../css/colors.css';
+@value lightBlue from '../../../../../css/colors.css';
+
+.privateDataContainer {
+    width: 100%;
+    max-width: 860px;
+    background: #1B2033;
+    height: 572px;
+    overflow: auto;
+    width: calc(100vw - 60px);
+
+    &::-webkit-scrollbar {
+        width: 2px;
+        height: 2px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: rgba(166, 177, 220, 0.25);
+    }
+
+    .mainDataContainer {
+        max-width: 244px;
+        width: 100%;
+        display: flex;
+        margin: 24px auto 0;
+
+        .avatarContainer {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-right: 27px;
+        }
+
+        .rightContainer {
+            font-family: FuturaPT-Medium;
+
+            .personName {
+                font-size: 24px;
+                line-height: 31px;
+                letter-spacing: 0.01em;
+                color: #F8F8F8;
+                white-space: nowrap;
+            }
+
+            .personStatus {
+                font-size: 14px;
+                line-height: 18px;
+                letter-spacing: 0.012em;
+                text-transform: uppercase;
+                margin: 4px 0;
+                display: flex;
+                align-items: center;
+
+                svg {
+                    margin-left: 7px;
+                }
+            }
+
+            .goldStatus {
+                color: #F6B93B;
+            }
+
+            .platinumStatus {
+                color: #E5E4E2;
+            }
+
+            .diamondStatus {
+                color: #B9F2FF;
+            }
+
+            .vipStatus {
+                color: #FF8541;
+            }
+
+            .hash {
+                font-size: 14px;
+                line-height: 18px;
+                letter-spacing: 0.012em;
+                color: rgba(248, 248, 248, 0.75);
+            }
+        }
+    }
+
+    @media(max-width: 768px) {
+        width: calc(100vw - 48px);
+    }
+
+    @media(max-width: 600px) {
+        width: calc(100vw - 32px);
+
+        .mainDataContainer {
+            margin-top: 24px;
+            margin-left: 31px;
+        }
+    }
+
+    @media(max-width: 544px) {
+        height: 472px;
+    }
+}
+
+.form {
+    margin-top: 41px;
+    transition: all .3s ease;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 31px;
+    position: relative;
+
+    .bottomLabel {
+        position: absolute;
+        top: 40px;
+        left: 0;
+        font-family: FuturaPT-Medium;
+        font-size: 12px;
+        line-height: 15px;
+        letter-spacing: 0.01em;
+        color: rgba(166, 177, 220, 0.25);
+        transition: all .3s ease;
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .bottomLabelActive {
+        opacity: 1;
+    }
+
+    .bottomPasswordLabel {
+        opacity: 1 !important;
+    }
+
+    @media(max-width: 450px) {
+        padding: 0 16px;
+    }
+}
+
+.button {
+    background-color: lightBlueDingy;
+    color: whiteBasic;
+    font-family: FuturaPT-Medium;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 21px;
+    margin-top: -24px;
+    z-index: 2;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    box-sizing: border-box;
+    outline: none;
+    transition: .5s ease;
+    border: none;
+    position: absolute;
+    padding: 7.5px 42.5px;
+    bottom: 81px;
+    right: 31px;
+    max-width: 124px;
+    box-shadow: 0 0 5px 1px lightBlueDingy;
+
+    @media(max-width: 920px) {
+        position: relative;
+        bottom: initial;
+        right: initial;
+        margin-top: -19px;
+        margin-bottom: 67px;
+    }
+
+    @media(max-width: 600px) {
+        width: 100%;
+        max-width: initial;
+        margin-top: 43px;
+        margin-bottom: 0
+    }
+}
+
+.isVisible {
+    opacity: 1;
+
+    .content {
+        pointer-events: auto;
+    }
+}
+
+.genderContainerField, .birthDateContainerField, .phoneContainerField,
+.countryContainerField, .cityContainerField, .addressContainerField,
+.accountNumberContainerField, .emailContainerField, .emptyContainerField,
+.newPasswordContainerField, .confirmPasswordContainerField {
+    position: relative;
+    margin-bottom: 62px;
+    max-width: 242px;
+    height: 36px;
+    width: 100%;
+
+    input {
+        width: 100% !important;
+    }
+
+    img {
+        position: absolute;
+        top: 10px;
+        right: 12.5px;
+        z-index: 1;
+        cursor: pointer;
+    }
+
+    @media(max-width: 920px) {
+        max-width: initial;
+        width: 48%;
+    }
+
+    @media(max-width: 600px) {
+        width: 100%;
+    }
+}
+
+.emailContainerField {
+    @media(max-width: 600px) {
+        margin-bottom: 87px;
+    }
+}
+
+.accountNumberContainerField {
+    pointer-events: none;
+}
+
+.birthDateContainerField {
+    background: #161A2A;
+
+    .birthDateContainerFormInput {
+        input {
+            opacity: 0;
+        }
+
+        p {
+            font-size: 12px !important;
+            line-height: 15px !important;
+            top: -20px !important;
+            left: 0px !important;
+            opacity: .7;
+        }
+    }
+
+    img {
+        z-index: 4;
+        pointer-events: none;
+    }
+
+    @media(max-width: 920px) {
+        .birthDateContainerFormInput {
+            input {
+                opacity: 1;
+                color: #161A2A;
+            }
+        }
+    }
+}
+
+.phoneContainerField {
+    input {
+        padding-left: 48px;
+    }
+
+    p {
+        font-size: 12px !important;
+        line-height: 15px !important;
+        top: -20px !important;
+        left: 0px !important;
+        opacity: .7;
+    }
+}
+
+.genderContainerField {
+    img {
+        transition: all .3s ease;
+        top: 16px;
+    }
+
+    .genderFormFieldContainer {
+        position: absolute;
+        width: 100%;
+
+        & > div {
+            margin-bottom: 0!important;
+        }
+
+        input {
+            background: transparent;
+            font-size: 0;
+            cursor: pointer;
+        }
+    }
+}
+
+.emptyContainerField {
+    opacity: 0;
+    pointer-events: none;
+    width: 242px;
+    height: 36px;
+
+    @media(max-width: 920px) {
+        display: none;
+    }
+}
+
+.countryContainerField {
+    & > div {
+        width: 100%;
+    }
+
+    p {
+        color: rgba(166, 177, 220, 0.75);
+    }
+
+    input {
+        padding-left: 46px;
+        color: rgba(166, 177, 220, 0.75);
+    }
+
+    .iconFlag {
+        left: 16px;
+        top: 12px;
+        position: absolute;
+    }
+
+    .iconArrowDown {
+        top: 15px;
+        left: 43px;
+        transition: all .3s ease;
+    }
+}
+
+.newPasswordContainerField {
+    margin-top: 35px;
+    transform: translateY(-19px);
+
+    @media(max-width: 920px) {
+        margin-top: 25px;
+        transform: none;
+    }
+
+    @media(max-width: 600px) {
+        margin-top: 0;
+    }
+}
+
+.confirmPasswordContainerField {
+    position: absolute;
+    bottom: 81px;
+    left: 0;
+    right: 0;
+    margin: auto;
+
+    @media(max-width: 920px) {
+        position: relative;
+        bottom: initial;
+        margin: initial;
+        margin-top: 25px;
+    }
+
+    @media(max-width: 600px) {
+        margin-top: 0;
+    }
+}
+
+.clearPasswords {
+    color: rgba(248, 248, 248, 0.5);
+    font-weight: 600;
+    cursor: pointer;
+    position: absolute;
+    bottom: 81px;
+    right: 191px;
+    height: 36px;
+    line-height: 36px;
+    font-family: FuturaPT-Medium;
+    font-weight: 600;
+    font-size: 16px;
+
+    @media(max-width: 920px) {
+        position: relative;
+        bottom: initial;
+        top: -19px;
+        margin-left: auto;
+        right: 36px;
+    }
+
+    @media(max-width: 600px) {
+        margin: auto;
+        right: initial;
+        width: 100%;
+        order: 1;
+        text-align: center;
+        margin-top: 6px;
+        margin-bottom: 26px;
+        top: 0;
+    }
+}
+
+.isPopupHidden {
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+}
+
+.passwordLine {
+    position: absolute;
+    border-bottom: 1px solid #333543;
+    width: 100%;
+    left: 0;
+    bottom: 155px;
+
+    @media(max-width: 920px) {
+        bottom: 220px;
+    }
+
+    @media(max-width: 600px) {
+        bottom: 322px;
+        width: calc(100% - 62px);
+        left: auto;
+    }
+
+    @media(max-width: 450px) {
+        width: calc(100% - 32px);
+    }
+}
+
+.errorMessage {
+    position: absolute;
+    transform: translateY(-18px);
+    font-family: FuturaPT-Medium;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: 0.01em;
+    color: rgba(235, 87, 87, 0.75);
+}
+
+.errorBottomLabel {
+    color: rgba(235, 87, 87, 0.75) !important;
+}
+
+.genderSelect {
+    height: 100%;
+    background: #161A2A;
+    position: relative;
+    cursor: pointer;
+}
+
+.innerGenderContainer {
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    top: 36px;
+    z-index: 3;
+    transition: all .3s ease;
+    pointer-events: none;
+}
+
+.innerGenderContainerOpen {
+    opacity: 1;
+    z-index: 9;
+    pointer-events: auto;
+}
+
+.rotateImg {
+    transform: rotateX(180deg);
+}
+
+.genderContainer {
+    background: #22273A;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+    height: 36px;
+    width: 100%;
+    border-top: 1px solid rgba(248, 248, 248, 0.05);
+    font-family: FuturaPT-Medium;
+    font-size: 14px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+    padding-left: 16px;
+    transition: all .3s ease;
+    color: rgba(166, 177, 220, 0.5);
+
+    &:hover {
+        background: rgb(67,73,98);
+        color: rgba(248, 248, 248, 0.75);
+    }
+}
+
+.currentGenderTitle {
+    font-family: FuturaPT-Medium;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.012em;
+    color: rgba(166, 177, 220, 0.5);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 16px;
+    background: #161A2A;
+    position: relative;
+    cursor: pointer;
+}
+
+.countryTitle {
+    padding-left: 46px;
+}
+
+.callingCode {
+    position: absolute;
+    top: 9px;
+    z-index: 1;
+    font-family: FuturaPT-Medium;
+    font-style: normal;
+    font-weight: 450;
+    font-size: 14px;
+    line-height: 18px;
+    color: rgba(166, 177, 220, 0.5);
+    left: 16px;
+    transition: all .3s ease;
+}
+
+.phoneInputActive {
+    .callingCode {
+        color: lightBlue !important;
+    }
+}
+
+.datePickerContainer {
+    position: absolute;
+    top: 0;
+    z-index: 4;
+    width: inherit;
+
+    input {
+        border: none;
+        outline: none;
+        height: 36px;
+        width: 242px !important;
+        font-family: FuturaPT-Medium;
+        font-style: normal;
+        font-weight: 450;
+        font-size: 14px;
+        line-height: 18px;
+        letter-spacing: 0.012em;
+        background: #161A2A;
+        padding-left: 16px;
+        transition: all .3s ease;
+        color: rgba(166, 177, 220, 0.5);
+    }
+
+    @media(max-width: 920px) {
+        display: none;
+
+        input {
+            width: 100% !important;
+        }
+    }
+}
+
+.topLabel {
+    font-family: FuturaPT-Medium;
+    font-size: 12px;
+    line-height: 15px;
+    color: rgba(166, 177, 220, 0.5);
+    position: absolute;
+    top: -20px;
+    opacity: .7;
+}
+
+.buttonContainer {
+    @media(max-width: 600px) {
+        width: 100%;
+    }
+}
+
+.mobileMaskDate {
+    display: none;
+    background: none;
+    color: rgba(166, 177, 220, 0.5);
+    font-size: 14px;
+    line-height: 18px;
+    outline: none;
+    border: none;
+    box-sizing: border-box;
+    z-index: 1;
+    padding: 9px 16px;
+    font-family: FuturaPT-Medium;
+    transition: all .3s;
+
+    @media(max-width: 920px) {
+        display: block;
+        position: absolute;
+        z-index: 7;
+        top: 0;
+        height: 100%;
+    }
+}
+
+.mobileMaskDateActive {
+    outline: .5px solid lightBlue;
+    color: lightBlue !important;
+}
+
+.successPopup{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    max-width: 300px;
+    height: auto;
+    background: rgb(56,63,87, .9);
+    z-index: 1;
+    padding: 10px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 1s;
+    visibility: hidden;
+}
+
+.active{
+    opacity: 1;
+    transition: opacity 1s;
+    visibility: visible;
+}
+
+.successPopupTitle{
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.012em;
+    color: #F8F8F8;
+    font-family: FuturaPT-Medium;
+    margin-bottom: 20px;
+}

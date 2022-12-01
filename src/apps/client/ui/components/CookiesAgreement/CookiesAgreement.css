@@ -1,0 +1,114 @@
+@value whiteDingy from '../../../../../css/colors.css';
+@value deepBlue from '../../../../../css/colors.css';
+
+.cookiesContainer {
+    width: fit-content;
+    padding: 15px 22px 15px 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    left: 84px;
+    bottom: 66px;
+    z-index: 100;
+    opacity: 0;
+    background: rgb(168 179 220 / 95%);
+
+    @media (max-width: 1024px) {
+        padding: 12px 16px;
+        left: 0;
+    }
+
+    @media(max-width: 544px) {
+        bottom: 56px;
+        width: 100%;
+    }
+
+    @media(max-height: 544px) and (orientation: landscape) {
+        bottom: 56px;
+    }
+}
+
+.animated {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+.fadeInUp {
+    animation-name: fadeInUp;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 100%, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.fadeOut {
+    animation-name: fadeOut;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.content {
+    margin-right: 27px;
+    font-family: FuturaPT-Medium;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.012em;
+    color: whiteDingy;
+
+    @media (max-width: 544px) {
+        font-size: 14px;
+        line-height: 17px;
+        margin-right: 22px;
+    }
+}
+
+.closeWrapper {
+    @mixin removeDefaultButton;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 28px;
+    height: 28px;
+    transform: translate(50%, -50%);
+    border-radius: 50%;
+    background-color:  #161A2A;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media (max-width: 544px) {
+        display: none;
+    }
+}
+
+.agreementButton{
+    @mixin removeDefaultButton;
+    font-family: FuturaPt-Medium;
+    font-size: 16px;
+    line-height: 21px;
+    font-weight: 600;
+    padding: 2px 30px;
+    background: deepBlue;
+    color: whiteDingy;
+    cursor: pointer;
+
+    @media (max-width: 544px) {
+        padding: 2px 31px;
+    }
+}

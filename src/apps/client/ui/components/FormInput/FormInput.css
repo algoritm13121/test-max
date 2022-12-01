@@ -1,0 +1,143 @@
+@value whiteBasic from '../../../../../css/colors.css';
+
+.inputWrapper {
+    position: relative;
+    font-family: FuturaPT-Medium;
+    margin-bottom: 54px;
+
+    p {
+        position: absolute;
+        color: rgba(166, 177, 220, 0.5);
+        top: 8px;
+        left: 16px;
+        font-size: 14px;
+        line-height: 18px;
+        z-index: 1;
+        transition: all .3s ease;
+        pointer-events: none;
+    }
+}
+
+.inputWrapperCta {
+    @media (max-width: 340px) {
+        margin: 10px 0;
+    }
+}
+
+.whiteText {
+    transition: all .25s ease;
+}
+
+.field, .list {
+    width: 245px;
+    color: rgba(166, 177, 220, 0.5);
+    height: 36px;
+    font-size: 14px;
+    line-height: 18px;
+    outline: none;
+    border: none;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1;
+    background: #161A2A;
+    padding: 9px 16px;
+    font-family: FuturaPT-Medium;
+    transition: all .3s ease;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    @media(max-width: 768px) {
+        width: 296px;
+    }
+}
+
+.field:focus + .whiteText, .positionLabel {
+    font-size: 12px !important;
+    line-height: 15px !important;
+    top: -20px !important;
+    left: 0px !important;
+    opacity: .7;
+}
+
+.field:focus {
+    outline: .5px solid #A6B1DC;
+    color: #A6B1DC !important;
+
+    & + p {
+        color: #A6B1DC !important;
+    }
+}
+
+.labelEror {
+    transition: all .3s ease;
+    color: rgba(235, 87, 87, 0.75);
+}
+
+.error {
+    outline: .5px solid rgba(235, 87, 87, 0.75) !important;
+
+    & + p {
+        color: rgba(235, 87, 87, 0.75);
+    }
+}
+
+.errorUnder {
+    position: absolute;
+    left: 0;
+    top: 40px;
+    z-index: 1;
+    color: rgba(235, 87, 87, 0.75);
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+}
+
+.disabledField {
+    padding-top: 16px;
+    cursor: pointer;
+
+    &:after {
+        position: absolute;
+        right: 17px;
+        content: '';
+        width: 14px;
+        height: 8px;
+    }
+}
+
+.open {
+    &:after {
+        transform: rotate(180deg);
+    }
+}
+
+.list {
+    position: absolute;
+    padding: 10px 10px 10px 0;
+    box-shadow: 0 0 8px rgba(12, 81, 60, 0.25);
+    top: 55px;
+    height: inherit;
+    z-index: 2;
+    border: 1px solid whiteBasic;
+
+    li {
+        width: 250px;
+        height: 29px;
+        padding: 6px 12px;
+        cursor: pointer;
+    }
+}
+
+.errorLine{
+    position: absolute;
+    top: 29px;
+    right: 0;
+    width: 60px;
+    height: 0.5px;
+    background-color: rgba(235, 87, 87, 0.75);
+}

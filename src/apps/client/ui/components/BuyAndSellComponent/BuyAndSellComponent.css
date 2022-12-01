@@ -1,0 +1,138 @@
+@value deepBlue from '../../../../../css/colors.css';
+@value whiteDingy from '../../../../../css/colors.css';
+@value whiteBasic from '../../../../../css/colors.css';
+@value greenLight from '../../../../../css/colors.css';
+@value lightBlueDingy from '../../../../../css/colors.css';
+@value redLight from '../../../../../css/colors.css';
+@value greyLight from '../../../../../css/colors.css';
+@value greyLightDingy from '../../../../../css/colors.css';
+
+.root {
+    width: 100%;
+}
+
+.buyAndSell {
+    display: flex;
+
+.title {
+    font-size: 16px;
+    line-height: 23px;
+    text-align: center;
+    letter-spacing: 0.01em;
+    color: #ffffff;
+
+
+}
+
+.price {
+    font-size: 12px;
+    line-height: 8px;
+    text-align: center;
+    letter-spacing: 0.012em;
+    color: #ffffff;
+
+}
+}
+
+.buy, .counterContainer, .sell{
+    width: 96px;
+    height: 40px;
+    border-radius:2px;
+
+@media(max-width: 1024px) {
+    width: 33.3333%;
+}
+}
+
+.buy {
+    background: linear-gradient(90deg, #0ea97b, rgb(14, 169, 123));
+    cursor: pointer;
+&:hover{background: linear-gradient(90deg, rgba(14, 169, 123, 0.66), rgba(14, 169, 123, 0.66));}
+}
+.buy:hover .price{color: white;}
+.buy:hover .title{color: white;}
+.counterContainer {
+    background: #161A2A;
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.counter {
+    @mixin removeDefaultInput;
+    font-size: 13px;
+    line-height: 17px;
+    letter-spacing: 0.012em;
+    color: whiteDingy;
+    width: 100%;
+    padding-left: 12px;
+    font-family: FuturaPT-Medium;
+
+&::-webkit-outer-spin-button,
+&::-webkit-inner-spin-button {
+     -webkit-appearance: none;
+     margin: 0;
+ }
+}
+
+.sell {
+    background: linear-gradient(270deg, #f25555d1, #f25555d1);
+    cursor: pointer;
+&:hover{background: linear-gradient(270deg, rgba(242, 85, 85, 0.56), rgba(242, 85, 85, 0.56));}
+}
+.sell :hover .price{color: white;}
+.sell :hover .title{color: white;}
+.arrows {
+    position: absolute;
+    right: 9.5px;
+    cursor: pointer;
+}
+
+.arrowUp {
+    top: 0;
+}
+
+.arrowDown {
+    bottom: 0;
+}
+
+.sellingPopupContainer {
+  margin: -25px 122px 21px -6px;
+    transform: translateX(-113px);
+
+@media(max-width: 1024px) {
+    transform: translateX(0);
+    transition: all .5s ease;
+}
+}
+
+.confirmPopupContainer {
+
+    transition: all .5s ease;
+
+}
+
+.confirmPopupContainerActive {
+@media(max-width: 1024px) {
+    position: fixed;
+    width: 100%;
+    height: calc(100% - 134px);
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(56,63,87, .9);
+    z-index: 1;
+}
+
+@media(max-width: 544px) {
+    height: calc(100% - 112px);
+}
+}
+
+.counterContainer {
+input::placeholder {
+    color: whiteDingy;
+}
+}

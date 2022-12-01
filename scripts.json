@@ -1,0 +1,56 @@
+[
+    {
+        "name": "server",
+        "command": "node --max-old-space-size=4096 server/dev",
+        "env": {
+            "NODE_ENV": "development",
+            "DEBUG_FD": 1,
+            "SERVER": true
+        }
+    },
+    {
+        "name": "static",
+        "command": "node --max-old-space-size=4096 webpack/server",
+        "env": {
+            "NODE_ENV": "development",
+            "DEBUG_FD": 1,
+            "BROWSER": true
+        }
+    },
+    {
+        "name": "build:static:dev",
+        "command": "webpack --config webpack/dev.config.js",
+        "env": {
+            "NODE_ENV": "development",
+            "DEBUG_FD": 1,
+            "BROWSER": true
+        }
+    },
+    {
+        "name": "build:static:prod",
+        "command": "webpack --config webpack/prod.config.js",
+        "env": {
+            "NODE_ENV": "production",
+            "DEBUG_FD": 1,
+            "BROWSER": true
+        }
+    },
+    {
+        "name": "build:server:dev",
+        "command": "webpack --config webpack/server/dev.config.js",
+        "env": {
+            "NODE_ENV": "development",
+            "DEBUG_FD": 1,
+            "SERVER": true
+        }
+    },
+    {
+        "name": "build:server:prod",
+        "command": "webpack --config webpack/server/prod.config.js",
+        "env": {
+            "NODE_ENV": "production",
+            "DEBUG_FD": 1,
+            "SERVER": true
+        }
+    }
+]

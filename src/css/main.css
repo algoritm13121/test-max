@@ -1,0 +1,6 @@
+@import 'reset.css';
+@import 'fonts.css';
+
+* {
+    box-sizing: border-box;
+}

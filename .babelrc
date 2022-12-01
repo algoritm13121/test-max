@@ -1,0 +1,37 @@
+{
+    "presets": [
+        "es2015",
+        "stage-0",
+        "react"
+    ],
+    "plugins": [
+        "universal-import",
+        "transform-es2015-duplicate-keys",
+        "transform-decorators-legacy",
+        "react-element-info-unique",
+        "fill-action-name",
+        [
+            "module-resolver",
+            {
+                "root": [
+                    "./"
+                ],
+                "extensions": [".js", ".jsx", ".ts"]
+            }
+        ]
+    ],
+    "env": {
+        "production": {
+            "plugins": [
+                "transform-react-constant-elements",
+                "transform-react-remove-prop-types"
+            ]
+        },
+        "development": {
+            "plugins": [
+                "transform-react-jsx-source",
+                "transform-react-jsx-self"
+            ]
+        }
+    }
+}

@@ -1,0 +1,6 @@
+{
+    "5": { "chrome": 28, "safari": 6, "firefox": 28, "opera": 32, "ie": 11 },
+    "6": { "chrome": 79, "safari": 21, "firefox": 65 },
+    "dev": { "browsers": ["last 2 chrome versions", "last 2 firefox versions", "last 2 safari versions"] },
+    "node": { "node": 6.5 }
+}

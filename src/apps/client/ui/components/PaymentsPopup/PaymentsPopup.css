@@ -1,0 +1,444 @@
+@value yellowBasic from '../../../../../css/colors.css';
+@value lightBlueDingy from '../../../../../css/colors.css';
+@value whiteDingy from '../../../../../css/colors.css';
+@value lightBlue from '../../../../../css/colors.css';
+
+.root {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    overflow-y: auto;
+    opacity: 0;
+    pointer-events: none;
+    transition: all .5s ease;
+}
+
+.cover {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(27 32 51 / 80%);
+}
+
+.popupWrap {
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    &:after {
+        display: inline-block;
+        vertical-align: middle;
+        width: 0;
+        height: 100%;
+        content: '';
+    }
+}
+
+.popup {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    width: 100%;
+    padding: 30px;
+
+    @media (max-width: 768px) {
+        padding: 24px;
+    }
+
+    @media(max-width: 600px) {
+        padding: 16px;
+    }
+
+    @media (max-width: 541px) {
+        margin: auto;
+    }
+}
+
+.popupContent {
+    max-width: 710px;
+    margin: 0 auto;
+    filter: drop-shadow(0px 0px 63px rgba(0, 0, 0, 0.71));
+
+    @media (max-width: 541px) {
+        height: 100%;
+    }
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+    flex-direction: column;
+}
+
+.closeButton {
+    @mixin removeDefaultButton;
+    padding: 0;
+    width: 36px;
+    height: 36px;
+    position: absolute;
+    top: -16px;
+    right: -16px;
+    background: #161A2A;;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1;
+
+    @media (max-width: 600px) {
+        top: -18px;
+        right: 0;
+    }
+}
+
+.isVisible {
+    opacity: 1;
+
+    .content {
+        pointer-events: auto; 
+    }
+}
+
+.formContainer {
+    position: relative;
+    background: #1B2033;
+}
+
+.title {
+    font-family: FuturaPT-Medium;
+    font-size: 16px;
+    line-height: 21px;
+    text-align: center;
+    letter-spacing: 0.01em;
+    color: #A6B1DC;
+    margin-top: 24px;
+    margin-bottom: 18px;
+    
+    @media(max-width: 544px) {
+        font-size: 20px;
+        line-height: 26px;
+        margin-top: 36px;
+        margin-bottom: 78px;
+    }
+}
+
+.paymentsContainer {
+    display: flex;
+    justify-content: space-between;
+    min-width: 662px;
+
+    @media(max-width: 544px) {
+        min-width: calc(166/208 * 153vw);
+    }
+}
+
+.paymentContainer {
+    border: 1px solid rgba(166, 177, 220, 0.25);
+    width: 31.3999999%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    height: 166px;
+    transition: all .2s ease;
+
+    img {
+        margin-bottom: 9px;
+        transition: all .2s ease;
+        opacity: 0.6;
+    }
+
+    &:nth-child(2n) {
+        img {
+            margin-bottom: 0 !important;
+        }
+    }
+
+    &:hover {
+        background: #161A2A;
+
+        img {
+            opacity: 1;
+        }
+        
+        .textContainer {
+            color: #F8F8F8;
+        }
+    }
+
+    @media(max-width: 544px) {
+        height: 121px;
+        min-width: 152px;
+        margin-right: 16px;
+
+        img {
+            height: 68px;
+        }
+
+        &:nth-child(2n) {
+            img {
+                height: 84px;
+                transform: translateY(-8px);
+            }
+        }
+    }
+}
+
+.textContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: FuturaPT-Medium;
+    font-size: 14px;
+    line-height: 18px;
+    text-align: center;
+    letter-spacing: 0.012em;
+    color: #A6B1DC;
+    position: relative;
+    margin-top: 16px;
+    transition: all .2s ease;
+
+    @media(max-width: 544px) {
+        margin-top: 12px;
+        margin-bottom: 12px;
+    }
+}
+
+.paymentSubtitle {
+    margin-top: 3px;
+    color: rgba(166, 177, 220, 0.5);
+
+    @media(max-width: 544px) {
+        position: absolute;
+        margin-top: 18px;
+    }
+}
+
+.payments {
+    overflow: auto;
+    margin: 0 24px;
+    margin-bottom: 18px;
+    padding-bottom: 16px;
+
+    &::-webkit-scrollbar {
+        height: 2px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background:rgba(166, 177, 220, 0.25);
+        border-radius: 10px;
+    }
+
+    @media(max-width: 544px) {
+        margin: 0 16px;
+        margin-bottom: 40px;
+        padding-bottom: 16px;
+    }
+}   
+
+.hiddenInfo {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    max-width: 448px;
+    margin-bottom: 24px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 16px;
+    transition: 0.3s all ease-out;
+    max-height: 0;
+    overflow: hidden;
+}
+
+.hiddenInfoOpen {
+    max-height: 74px;
+}
+
+.titleTop {
+    font-family: FuturaPT-Medium;
+    font-style: normal;
+    font-weight: 450;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: 0.01em;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    color: rgba(166, 177, 220, 0.5);
+    margin-bottom: 4px;
+    transition: all .3s ease;
+}
+
+.bitcoinAdressContainer, .qiwiAdressContainer {
+    width: 100%;
+    margin-bottom: 4px;
+    padding: 9px 17px 9px 16px;
+    background-color: #161A2A;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all .3s ease;
+}
+
+.bitcoinAdress {
+    font-family: FuturaPT-Medium;
+    font-style: normal;
+    font-weight: 450;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.012em;
+    color: rgba(166, 177, 220, 0.5);
+    margin-right: 11px;
+
+    @media(max-width: 359px) {
+        font-size: 12px;
+        line-height: 16px;
+    }
+}
+
+.titleBottom {
+    font-family: FuturaPT-Medium;
+    font-style: normal;
+    font-weight: 450;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: 0.01em;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    color: rgba(166, 177, 220, 0.25);
+}
+
+.adressWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.copy {
+    position: relative;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+
+    &:after {
+        content: url('/src/apps/client/ui/components/PaymentsPopup/images/copy.svg');
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.dontShowCopiedText {
+    font-family: FuturaPT-Medium;
+    font-style: normal;
+    font-weight: 450;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: 0.01em;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    color: rgba(166, 177, 220, 0.5);
+    position: absolute;
+    right: 68px;
+    top: 290px;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+
+    @media(max-width: 760px) {
+        display: none;
+    }
+}
+
+.showCopiedText {
+    opacity: 1;
+}
+
+.linkContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    text-decoration: none;
+}
+
+.counter {
+    @mixin removeDefaultInput;
+    font-family: FuturaPT-Medium;
+    font-style: normal;
+    font-weight: 450;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.012em;
+    color: rgba(166, 177, 220, 0.5);
+    width: 100%;
+    padding: 9px 0 9px 16px;
+
+    &::placeholder {
+        color: rgba(166, 177, 220, 0.5);
+        transition: all .3s ease;
+    }
+
+    @media(max-width: 359px) {
+        font-size: 12px;
+        line-height: 16px;
+    }
+}
+
+.sendButton {
+    @mixin removeDefaultButton;
+    cursor: pointer;
+    display: flex;
+
+    svg {
+        width: 16px;
+
+        path {
+            transition: all .3s ease;
+        }
+
+        &:hover {
+            path {
+                fill-opacity: .75;
+            }
+        }
+    }
+}
+
+.isTitleFocus {
+    color: lightBlue !important;
+}
+
+.isInputFocus {
+    outline: .5px solid lightBlue !important;
+
+    input {
+        color: lightBlue !important;
+    }
+}
+
+.qiwiAdressContainer {
+    padding: 0 !important;
+    padding-right: 17px !important;
+}
+
+.errorField {
+    color: rgba(235, 87, 87, 0.75) !important;
+    
+    input {
+        color: rgba(235, 87, 87, 0.75) !important
+    }
+}
+
+.errorFieldOutline {
+    outline: .5px solid rgba(235, 87, 87, 0.75) !important;
+}

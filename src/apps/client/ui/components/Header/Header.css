@@ -1,0 +1,168 @@
+@value deepBlue from '../../../../../css/colors.css';
+@value whiteDingy from '../../../../../css/colors.css';
+@value whiteBasic from '../../../../../css/colors.css';
+@value greenLight from '../../../../../css/colors.css';
+@value lightBlueDingy from '../../../../../css/colors.css';
+@value redLight from '../../../../../css/colors.css';
+@value greyLight from '../../../../../css/colors.css';
+@value greyLightDingy from '../../../../../css/colors.css';
+
+.root {
+    background: deepBlue;
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    position: relative;
+    height: 100%;
+    max-height: 84px;
+    z-index: 12;
+    font-family: FuturaPT-Medium;
+
+@media(max-width: 1024px) {
+    flex-direction: row-reverse;
+    padding-right: 0px;
+    z-index: 13;
+}
+
+@media(max-width: 756px) {
+    padding: 0;
+    padding-left: 14px;
+}
+
+@media(max-width: 544px) {
+    max-height: 56px;
+}
+
+@media(max-height: 544px) {
+    max-height: 56px;
+}
+}
+.logo {width: 90px;}
+.logo {
+@media(max-width: 1024px) {
+    display: none;
+}
+}
+.timeLangWrapper {
+    display: flex;
+    align-items: center;
+}
+.langLink {
+    text-decoration: none;
+    font-family: FuturaPT-Medium;
+    font-weight: 500;
+    color: rgba(166, 177, 220, 0.5);
+    &:hover{
+         color: rgba(166, 177, 220, 0.9);
+         cursor: pointer;
+     }
+}
+.activeLangLink {
+    text-decoration: none;
+    font-family: FuturaPT-Medium;
+    font-weight: 500;
+    color: white;
+    cursor: pointer;
+    &:hover{
+         color: white;
+     }
+}
+.iconStick {
+    color: #A6B1DC;
+    font-size: 20px;
+    margin-top: -4px;
+}
+.langBlock {
+    margin-right: 30px;
+    display: flex;
+    align-items: center;
+
+}
+.timeContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    letter-spacing: 0.01em;
+    color: rgba(255, 255, 255, 0.99);
+    cursor: default;
+    max-width: 114px;
+    width: 100%;
+
+.timeIcon {
+    margin-right: 8px;
+}
+
+.timeInnerContainer {
+    width: 61px;
+    margin: auto;
+
+.time {
+    margin-right: 6px;
+    font-size: 16px;
+    line-height: 21px;
+}
+}
+
+.timeFormat {
+    font-size: 12px;
+    line-height: 15px;
+    margin-top: 4px;
+}
+
+@media(max-width: 1024px) {
+    display: none;
+}
+}
+.depositButton:hover{background: rgba(101, 176, 255, 0.44);}
+.depositButton img{    padding: 8px;}
+.depositButton {
+    background: #65b0ff;
+    border-radius: 3px;
+    width: 68px;
+    height: 40px;
+
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 21px;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+@media(max-width: 544px) {
+    font-size: 12px;
+    line-height: 15px;
+    margin-right: 0px;
+    height: 36px;
+    width: 48px;
+    padding: 8px;
+    border-radius:3px;
+}
+
+@media(max-height: 544px) {
+    font-size: 12px;
+    line-height: 15px;
+    margin-right: 0px;
+    height: 36px;
+}
+}
+
+.mobileNavBarItems{
+    display: none;
+
+@media(max-width: 1024px) {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+}
+
+.buyAndSellContainer {
+@media(max-width: 1024px) {
+    display: none
+}
+}

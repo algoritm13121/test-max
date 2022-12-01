@@ -1,0 +1,120 @@
+@value whiteBasic from '../../../../../css/colors.css';
+@value lightBlueDingy from '../../../../../css/colors.css';
+
+.form {
+    margin-top: 55px;
+    transition: all .3s ease;
+
+    .bottomLabel {
+        position: absolute;
+        top: 40px;
+        left: 0;
+        font-family: FuturaPT-Medium;
+        font-size: 12px;
+        line-height: 15px;
+        letter-spacing: 0.01em;
+        color: rgba(166, 177, 220, 0.25);
+        opacity: 0;
+        pointer-events: none;
+        transition: all .3s ease;
+    }
+
+    .bottomLabelActive {
+        opacity: 1;
+    }
+
+    @media (max-width: 450px) {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.button {
+    background-color: lightBlueDingy;
+    position: relative;
+    color: whiteBasic;
+    padding: 7.5px 83px;
+    font-family: FuturaPT-Medium;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 21px;
+    margin-top: -24px;
+    z-index: 2;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    box-sizing: border-box;
+    outline: none;
+    transition: .5s ease;
+    width: 100%;
+    border: none;
+    box-shadow: 0 0 5px 1px lightBlueDingy;
+
+    
+    @media(max-width: 600px) {
+        margin-top: -11px;
+    }
+}
+
+.isVisible {
+    opacity: 1;
+
+    .content {
+        pointer-events: auto; 
+    }
+}
+
+.emailContainerField, .passwordContainerField {
+    position: relative;
+
+    img {
+        position: absolute;
+        top: 10px;
+        right: 12.5px;
+        z-index: 1;
+        cursor: pointer;
+    }
+}
+
+.emailContainerField {
+    margin-bottom: 62px;
+
+    @media(max-width: 450px) {
+        height: 36px;
+    }
+}
+
+.forgetPassordButton {
+    color: rgba(248, 248, 248, 0.5);
+    font-weight: 600;
+    width: fit-content;
+    margin: 12px auto 36px;
+    cursor: pointer;
+}
+
+.isPopupHidden {
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+}
+
+.errorMessage {
+    position: absolute;
+    transform: translateY(-18px);
+    font-family: FuturaPT-Medium;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: 0.01em;
+    color: rgba(235, 87, 87, 0.75);
+
+    @media(max-width: 600px) {
+        margin-top: -11px;
+    }
+}
+
+.buttonContainer {
+    position: relative;
+}

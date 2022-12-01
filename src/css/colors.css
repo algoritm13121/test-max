@@ -1,0 +1,10 @@
+@value whiteBasic: #FFFFFF;
+@value blackBasic: #000000;
+@value whiteDingy: #F8F8F8;
+@value deepBlue: #1B2033;
+@value lightBlue: #A6B1DC;
+@value greenLight: #27AE60;
+@value lightBlueDingy: #4D6ADC;
+@value redLight: rgba(235, 87, 87, 0.75);
+@value greyLight: rgba(248, 248, 248, 0.5);
+@value greyLightDingy: rgba(248, 248, 248, 0.75);

@@ -1,0 +1,218 @@
+@value lightBlueDingy from '../../../../../css/colors.css';
+@value whiteBasic from '../../../../../css/colors.css';
+@value greenLight from '../../../../../css/colors.css';
+@value redLight from '../../../../../css/colors.css';
+
+.tradeHistoryPopupContainer {
+    width: 100%;
+    max-width: 860px;
+    background: #1B2033;
+    height: 572px;
+    overflow: hidden;
+
+    .navbar {
+        display: flex;
+        background: rgba(166, 177, 220, 0.05);
+        font-family: FuturaPT-Medium;
+        font-size: 14px;
+        line-height: 18px;
+        letter-spacing: 0.012em;
+        color: rgba(166, 177, 220, 0.5);
+        padding: 6px 0;
+
+        div {
+            width: 100%;
+        }
+    }
+
+    .tradeHistoryContainer {
+        height: 521px;
+        overflow: auto;
+        margin-right: 8px;
+
+        &::-webkit-scrollbar {
+            width: 7px;
+            height: 2px;
+        }
+    
+        &::-webkit-scrollbar-thumb {
+            background: rgba(166, 177, 220, 0.5);
+            border-radius: 10px;
+        }
+
+        &::-webkit-scrollbar-thumb:hover {
+            background: rgb(133, 146, 201);
+        }
+
+        .tradeItem {
+            font-family: FuturaPT-Medium;
+            font-size: 12px;
+            line-height: 15px;
+            letter-spacing: 0.012em;
+            color: rgba(248, 248, 248, 0.75);
+            display: flex;
+            border-bottom: 1px solid #333543;
+            height: 58px;
+            width: 100%;
+
+            &:last-child {
+                border-bottom: none;
+            }
+            
+            .itemAsset {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+
+                img {
+                    margin-top: 6.5px;
+                }
+            }
+
+            .itemClosingRate {
+                flex-direction: column;
+                justify-content: center;
+
+                .itemDiffRate {
+                    white-space: nowrap;
+                    width: inherit;
+                    word-spacing: initial;
+                    margin-top: 3px;
+                }
+            }
+
+            .itemAmount, .itemPledge, .itemCommission {
+                color: #A6B1DC;
+            }
+        }
+
+        @media(max-width: 768px) {
+            width: calc(100vw - 48px);
+            height: calc(521px - 99px);
+
+            &::-webkit-scrollbar {
+                width: 2px;
+            }
+
+            .tradeItem {
+                width: fit-content;
+            }
+        }
+    }
+
+    @media(max-width: 920px) {
+        width: calc(100vw - 60px);
+        overflow: auto;
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            background: rgb(34,39,59);
+            width: fit-content;
+        }
+
+        .tradeHistoryContainer {
+            overflow: initial;
+            width: 100%;
+        }
+    }
+
+    @media(max-width: 768px) {
+        width: calc(100vw - 48px);
+    }
+
+    @media(max-width: 600px) {
+        width: calc(100vw - 32px);
+    }
+
+    @media(max-width: 544px) {
+        height: 472px;
+    }
+}
+
+.itemNum, .itemCreateDate , .itemCloseDate, .itemDate, .itemAsset, .itemAmount, .itemPledge, 
+.itemOpeningRate, .itemClosingRate, .itemProfit, .itemCommission, .itemClosingDate{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.itemNum {
+    max-width: 25px;
+    margin-left: 31px;
+    min-width: 25px;
+}
+
+.itemCreateDate {
+    max-width: 55px;
+    margin-right: 22px;
+    min-width: 55px;
+}
+
+.itemCloseDate {
+    max-width: 55px;
+    margin-right: 22px;
+    min-width: 55px;
+}
+
+.itemAsset {
+    max-width: 35px;
+    margin-right: 29px;
+    min-width: 35px;
+}
+
+.itemAmount {
+    max-width: 57px;
+    min-width: 57px;
+}
+
+.itemPledge {
+    max-width: 70px;
+    min-width: 70px;
+}
+
+.itemOpeningRate {
+    max-width: 54px;
+    margin-right: 16px;
+    min-width: 54px;
+}
+
+.itemClosingRate {
+    max-width: 55px;
+    min-width: 55px;
+    margin-right: 33px;
+    word-spacing: 9999999px;
+}
+
+.itemProfit {
+    max-width: 107px;
+    min-width: 107px;
+}
+
+.itemCommission {
+    max-width: 108px;
+    min-width: 108px;
+}
+
+.itemClosingDate {
+    max-width: 55px;
+    margin-right: 20px;
+    min-width: 55px;
+}
+
+.processingColor {
+    color: #F6B93B !important;
+}
+
+.executedColor {
+    color: greenLight !important;
+}
+
+.posValue {
+    color: greenLight !important;
+}
+
+.negValue {
+    color: redLight !important;
+}

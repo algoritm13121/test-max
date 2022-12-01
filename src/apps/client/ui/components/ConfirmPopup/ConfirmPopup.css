@@ -1,0 +1,279 @@
+@value greenLight from '../../../../../css/colors.css';
+@value whiteDingy from '../../../../../css/colors.css';
+@value redLight from '../../../../../css/colors.css';
+
+.root {
+    cursor: default;
+
+    @media(max-width: 1024px) {
+        position: relative;
+        width: auto;
+        height: auto;
+    }
+}
+
+.popup {
+    width: 215px;
+    position: absolute;
+    transform: translateY(31px);
+    background: rgb(56,63,87, .9);
+    transition: all .3s ease;
+    opacity: 0;
+    pointer-events: none;
+    padding: 20px 24px;
+    font-family: FuturaPT-Medium;
+    cursor: default;
+
+    &::before {
+        content: '';
+        position: absolute;
+        background-image: url(/src/apps/client/ui/components/Header/images/triangle.svg);
+        width: 16px;
+        height: 16px;
+        transform: translate(-18px, -32px);
+        background-repeat: no-repeat;
+    }
+
+    .title {
+        font-size: 14px;
+        line-height: 18px;
+        text-align: center;
+        letter-spacing: 0.012em;
+        color: whiteDingy;
+        margin-bottom: 18px;
+
+        img {
+            transform: translate(4px, 2px);
+            width: 13px;
+        }
+    }
+
+    @media(max-width: 1024px) {
+        position: relative;
+        transform: translateY(0);
+        display: none;
+
+        &::before {
+            content: none;
+        }
+    }
+}
+
+.isOpen {
+      margin-top: 35px;
+    opacity: 1;
+    pointer-events: auto;
+    display: flex;
+}
+
+.popupItem {
+    display: flex;
+    margin-bottom: 12px;
+
+    .itemName {
+        font-size: 14px;
+        line-height: 18px;
+        letter-spacing: 0.012em;
+        color: rgba(248, 248, 248, 0.5);
+        width: 52px;
+    }
+
+    .itemValue {
+        font-size: 14px;
+        line-height: 18px;
+        letter-spacing: 0.012em;
+        color: whiteDingy;
+    }
+
+    .price {
+        color: #A6B1DC;
+    }
+}
+
+.confirmButton {
+    @mixin removeDefaultButton;
+    background-color: greenLight;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.012em;
+    color: whiteDingy;
+    padding: 3px 12px 5px;
+    font-family: FuturaPT-Medium;
+    cursor: pointer;
+}
+
+.rejectButton {
+    @mixin removeDefaultButton;
+    width: 60px;
+    height: 26px;
+    border: 1px solid redLight;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttonContainers {
+    display: flex;
+    justify-content: space-between;
+}
+
+.selling {
+    &::before {
+        transform: translate(169px, -32px);
+    }
+}
+
+.successPopup {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: all .4s ease;
+    position: absolute;
+
+    .title {
+        margin-bottom: 16px;
+        white-space: nowrap;
+    }
+}
+
+.popupContainer {
+    opacity: 0;
+    transition: all .4s ease;
+    position: absolute;
+    pointer-events: none;
+}
+
+.isPopupVisible {
+    opacity: 1;
+    position: relative;
+    pointer-events: auto;
+    width: 100%;
+}
+
+.isSuccessPopupVisible {
+    opacity: 1;
+    position: relative;
+    pointer-events: auto;
+}
+
+.isAutoClose {
+    opacity: 0;
+}
+
+.popupOnFailed {
+    opacity: 0 !important;
+}
+
+.failedPopup {
+    display: flex;
+    opacity: 0;
+    transition: all .3s ease;
+    background: rgba(166, 177, 220, 0.25);
+    backdrop-filter: blur(8px);
+    transform: translateY(31px);
+    position: relative;
+    padding: 12px 16px;
+    pointer-events: none;
+    width: max-content;
+
+    &::before {
+        content: '';
+        position: absolute;
+        background-image: url(/src/apps/client/ui/components/Header/images/triangle.svg);
+        width: 16px;
+        height: 16px;
+        transform: translate(-10px, -24px);
+        background-repeat: no-repeat;
+    }
+
+    .title {
+        margin-left: 7px !important;
+        margin-bottom: 0 !important;
+        font-size: 14px;
+        line-height: 18px;
+        text-align: center;
+        letter-spacing: 0.012em;
+        color: #F8F8F8;
+        white-space: nowrap;
+    }
+
+    img {
+        width: 16px;
+    }
+
+    @media(max-width: 768px) {
+        &::before {
+            content: initial;
+        }
+    }
+}
+
+.isFailedPopup {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.sellingIsFailedPopup {
+    transform: translate(26px, 31px) !important;
+
+    &::before {
+        transform: translate(152px, -24px) !important;
+    }
+}
+
+.preloader {
+    width: 100%;
+    height: 26px;
+    display: flex;
+    justify-content: center;
+}
+
+.assetItemPair {
+    position: relative;
+    width: 32px;
+    height: 24px;
+    margin-right: 16px;
+}
+
+.imgUpper {
+    height: 16px;
+    width: 21px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    background-color: white;
+}
+
+.imgLower {
+    height: 16px;
+    width: 21px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: inline-block;
+    background-color: white;
+}
+
+
+.imgAlone {
+    height: 16px;
+    width: 21px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+}
+
+.counterContainerLeft {
+    left: 10px;
+}
+
+.counterDisabled {
+    opacity: 0.5;
+}

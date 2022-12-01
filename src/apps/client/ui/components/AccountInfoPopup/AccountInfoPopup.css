@@ -1,0 +1,243 @@
+@value lightBlueDingy from '../../../../../css/colors.css';
+@value whiteBasic from '../../../../../css/colors.css';
+
+.root {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    overflow-y: auto;
+    opacity: 0;
+    pointer-events: none;
+    transition: all .5s ease;
+    overflow-x: hidden;
+}
+
+.cover {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(27 32 51 / 80%);
+}
+
+.popupWrap {
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+
+    &:after {
+        display: inline-block;
+        width: 0;
+        height: 100%;
+        content: '';
+    }
+}
+
+.popup {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    width: 100%;
+    padding: 30px;
+
+    @media (max-width: 768px) {
+        padding: 24px;
+    }
+
+    @media(max-width: 600px) {
+        padding: 16px;
+    }
+}
+
+.popupContent {
+    max-width: 860px;
+    margin: 0 auto;
+    filter: drop-shadow(0px 0px 63px rgba(0, 0, 0, 0.71));
+
+    @media (max-width: 541px) {
+        height: 100%;
+    }
+}
+
+.content {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    overflow: hidden;
+    flex-direction: column;
+}
+
+.closeButton {
+    @mixin removeDefaultButton;
+    padding: 0;
+    width: 36px;
+    height: 36px;
+    position: absolute;
+    top: -16px;
+    right: -16px;
+    background: #161A2A;;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1;
+
+    @media (max-width: 600px) {
+        top: -18px;
+        right: 0;
+    }
+}
+
+.isVisible {
+    opacity: 1;
+
+    .content {
+        pointer-events: auto; 
+    }
+}
+
+.navbar {
+    display: flex;
+    width: 100%;
+    background: #1B2033;
+    height: 66px;
+    border-bottom: 1px solid #333543;
+
+    &::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+    }
+
+    @media(max-width: 768px) {
+        overflow: auto;
+    }
+}
+
+.privateData, .documents, .transaction, .tradeHistory {
+    font-family: FuturaPT-Medium;
+    font-size: 16px;
+    line-height: 21px;
+    letter-spacing: 0.01em;
+    color: #A6B1DC;
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all .3s ease;
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        opacity: 0;
+        z-index: 1;
+        transition: all .3s ease;
+        background: lightBlueDingy;
+        box-shadow: 0 0 5px 1px lightBlueDingy;
+    }
+
+    @media(max-width: 768px) {
+        min-width: 178.5px;
+    }
+
+    @media(max-width: 600px) {
+        min-width: 139px;
+        text-align: center;
+    }
+}
+
+.tradeHistory {
+    @media(max-width: 600px) {
+        flex-direction: column
+    }
+}
+
+.activeButton {
+    background: #161A2A;
+    color: #F8F8F8;
+
+    &::after {
+        opacity: 1;
+    }
+
+    svg {
+        opacity: 1;
+    }
+}
+
+.formsContainer {
+    width: 999999px;
+    display: flex;
+    transition: all .5s ease;
+
+    .authPopupContainer {
+        font-family: FuturaPT-Medium;
+        font-size: 16px;
+        line-height: 21px;
+        letter-spacing: 0.01em;
+        color: #A6B1DC;
+        max-width: 860px;
+        background: #1B2033;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .authPopupContainer {
+        height: 324px;
+    }
+
+    @media(max-width: 768px) {
+        .authPopupContainer, .registrationPopupContainer  {
+            width: calc(100vw - 48px);
+        }
+
+        .authPopupContainer {
+            height: max-content;
+        }
+
+        .registrationPopupContainer {
+            height: 324px;
+            overflow: auto;
+            justify-content: flex-start;
+        }
+    }
+
+    @media(max-width: 600px) {
+        .authPopupContainer, .registrationPopupContainer  {
+            width: calc(100vw - 32px);
+        }
+
+        .registrationPopupContainer {
+            height: 337px;
+        }
+    }
+}
+
+.tradeIcon {
+    opacity: 0;
+    transition: all .3s ease;
+    position: relative;
+    margin-left: 12px;
+    margin-top: 2px;
+
+    @media(max-width: 600px) {
+        opacity: 1;
+    }
+}

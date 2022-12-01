@@ -1,0 +1,14 @@
+node_modules/
+.idea/
+.tmp/**
+*.log
+npm-debug.log*
+public/
+server/compiled/
+backups/
+webpackAssets.json
+src/apps/admin/files
+.DS_Store
+*.DS_Store
+package-lock.json
+server/api/admin/db/temp
