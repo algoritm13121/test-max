@@ -59,7 +59,7 @@ mongod
 npm i -g yarn
 
 git clone https://github.com/algoritm13121/test-max.git
-cd imex
+cd test-max
 yarn global add pm2@latest
 yarn install
 yarn seeds
