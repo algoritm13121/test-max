@@ -58,7 +58,7 @@ yes | apt-get install -y mongodb
 mongod
 npm i -g yarn
 
-git clone https://github.com/algoritm13121/imex.git
+git clone https://github.com/algoritm13121/test-max.git
 cd imex
 yarn global add pm2@latest
 yarn install
@@ -69,6 +69,6 @@ pm2_auto_run
 
 cd /root/imex/helpers
 yarn install
-(crontab -l 2>/dev/null; echo "0 */1 * * * /usr/bin/node /root/imex/helpers/backup/start.js") | crontab -
+(crontab -l 2>/dev/null; echo "0 */1 * * * /usr/bin/node /root/test-max/helpers/backup/start.js") | crontab -
 
 echo "Установка завершена"
