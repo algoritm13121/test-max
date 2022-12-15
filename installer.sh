@@ -46,17 +46,18 @@ echo "Установка"
 echo "Количество ядер - $CPU_CORES"
 
 apt-get update
-yes | apt-get install nodejs
-yes | apt-get install npm
+sudo apt update
+cd ~
+curl -sL https://deb.nodesource.com/setup_16.17.1 -o /tmp/nodesource_setup.sh
+sudo bash /tmp/nodesource_setup.sh
+sudo apt install nodejs
 yes | apt-get install haproxy
 configurate_haproxy
-
-npm install -g n
-n stable
 yes | apt-get install git
 yes | apt-get install -y mongodb
 mongod
 npm i -g yarn
+npm i -g pm2
 
 git clone https://github.com/algoritm13121/test-max.git
 cd test-max
@@ -67,7 +68,7 @@ yarn deploy
 
 pm2_auto_run
 
-cd /root/imex/helpers
+cd /root/test-max/helpers
 yarn install
 (crontab -l 2>/dev/null; echo "0 */1 * * * /usr/bin/node /root/test-max/helpers/backup/start.js") | crontab -
 
